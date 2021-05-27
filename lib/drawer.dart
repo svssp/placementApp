@@ -41,7 +41,9 @@ class MyDrawer extends StatelessWidget {
             leading: Icon(Icons.phone_android),
             title: Text("Contact Us"),
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(context,MaterialPageRoute(builder: (context )=>Contact()));
+            
             },
           ),
           ListTile(
