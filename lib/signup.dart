@@ -4,74 +4,77 @@ import 'package:sample/home.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'SignUp';
-
     return MaterialApp(
-      title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(appTitle),
-        ),
-        body: SignUp(),
+        body: LogIn(),
       ),
     );
   }
 }
 
-class SignUp extends StatefulWidget {
+class LogIn extends StatefulWidget {
   @override
-  _SignUpState createState() => _SignUpState();
+  _LogInState createState() => _LogInState();
 }
 
-class _SignUpState extends State<SignUp> {
-  final _formKey = GlobalKey<FormState>();
+class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          TextFormField(
-            validator: (value) {
-              if (value.isEmpty || value == Null) return 'Enter Valid Email Id';
-              return null;
-            },
-            decoration: InputDecoration(
-              labelText: 'Email',
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 60.0),
+              child: Center(
+                child: Container(
+                    width: 200,
+                    height: 150,
+                    /*decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(50.0)),*/
+                    child: Image.asset('asset/images/flutter-logo.png')),
+              ),
             ),
-          ),
-          TextFormField(
-            validator: (value) {
-              if (value.isEmpty || value == Null)
-                return 'Please Enter Valid Roll Number';
-              return null;
-            },
-            decoration: InputDecoration(
-              labelText: 'Roll Number',
+            Padding(
+              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Roll number'),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
-                if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+              //padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TextField(
 
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                    (route) => false,
-                  );
-                }
-              },
-              child: Text('Submit'),
+                obscureText: true,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Date Of Birth'),
+              ),
             ),
-          ),
-        ],
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 50.0,
+              child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                onPressed: () {},
+                padding: EdgeInsets.all(10.0),
+                color: Color.fromRGBO(0, 160, 227, 1),
+                textColor: Colors.white,
+                child: Text("Login",
+                    style: TextStyle(fontSize: 15)),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

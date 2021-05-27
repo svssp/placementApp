@@ -1,4 +1,4 @@
-#Sat May 08 17:17:00 IST 2021
+#Thu May 27 11:51:15 IST 2021
 base.0=/home/svssp/jarvis/flutter/sample/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
