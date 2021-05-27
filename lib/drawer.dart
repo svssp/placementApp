@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample/contact.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -39,12 +40,16 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.phone_android),
             title: Text("Contact Us"),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>Contact()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text("LogOut"),
-            onTap: () {},
+            onTap: () {
+            
+            },
           )
         ],
       ),
