@@ -15,18 +15,18 @@ class Contact extends StatelessWidget {
       theme:ThemeData(
         
     primaryColor: Colors.white,
-
-    // Define the default font family.
     fontFamily: 'inter',
-
-    // Define the default TextTheme. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
     textTheme: TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
       headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       )),
+
+
       title: "Contact Placement Cell",
+
       home: new Scaffold(
+
+
         appBar: new AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
@@ -40,6 +40,7 @@ class Contact extends StatelessWidget {
 
         body: new Padding(
           padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+
           child: SingleChildScrollView(
                       child: Column(
               children:PlacementCell.map(
@@ -59,6 +60,7 @@ class Contact extends StatelessWidget {
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
                       ),
+
                       BoxShadow(
                         color: Colors.white,
                         offset: const Offset(0.0, 0.0),
@@ -67,6 +69,7 @@ class Contact extends StatelessWidget {
                       ),
                       ]
                     ),
+                    
                     child: Padding(
                       padding: const EdgeInsets.all(14),
                       child: Column(

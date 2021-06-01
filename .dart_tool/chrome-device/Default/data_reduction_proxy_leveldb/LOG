@@ -1,2 +1,3 @@
-2021/05/27-14:16:47.592 4a18 Creating DB /tmp/flutter_tools.DFCBUH/flutter_tools_chrome_device.VBZRGB/Default/data_reduction_proxy_leveldb since it was missing.
-2021/05/27-14:16:48.175 4a18 Delete type=3 #1
+2021/05/29-20:09:30.641 1ca4 Recovering log #3
+2021/05/29-20:09:30.755 1ca4 Delete type=3 #2
+2021/05/29-20:09:30.755 1ca4 Delete type=0 #3

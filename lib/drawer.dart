@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample/contact.dart';
+import 'package:sample/notifications.dart';
+import 'package:sample/studentsplaced.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -25,7 +27,10 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text("Notifications"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>Notifications()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.business_center),
@@ -35,7 +40,10 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person),
             title: Text("Students Placed"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>StudentsPlaced()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.phone_android),
