@@ -26,6 +26,7 @@ dependencies:
   carousel_slider: ^3.0.0
   fl_chart: ^0.36.1
   pie_chart: ^5.0.0
+  google_fonts: ^0.3.8
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,6 +69,9 @@ flutter:
     - family: inter
       fonts:
         - asset: assets/fonts/Inter-Regular.ttf
+    - family: padauk
+      fonts:
+        - asset: assets/fonts/Padauk-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
