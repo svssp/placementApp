@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sample/CompaniesVisited.dart';
 import 'package:sample/contact.dart';
 import 'package:sample/notifications.dart';
+import 'package:sample/signup.dart';
 import 'package:sample/studentsplaced.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -22,7 +24,9 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text("Home"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             leading: Icon(Icons.notifications),
@@ -35,7 +39,10 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.business_center),
             title: Text("Companies Visited"),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>CompaniesVisited()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.person),
@@ -58,7 +65,7 @@ class MyDrawer extends StatelessWidget {
             leading: Icon(Icons.logout),
             title: Text("LogOut"),
             onTap: () {
-            
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>LogIn()), (Route<dynamic> route) => false);
             },
           )
         ],
