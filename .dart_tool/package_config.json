@@ -98,6 +98,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_icons",
+      "rootUri": "file:///home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_icons-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/svssp/snap/flutter/common/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -272,7 +278,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-06-04T15:09:31.859182Z",
+  "generated": "2021-06-06T07:33:54.133354Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }

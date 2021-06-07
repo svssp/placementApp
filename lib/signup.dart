@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample/home.dart';
+//flutter_launcher_icon
+//flutter_native_splash
 
 
 class MyApp extends StatelessWidget {
@@ -13,12 +15,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class LogIn extends StatefulWidget {
   @override
   _LogInState createState() => _LogInState();
 }
 
 class _LogInState extends State<LogIn> {
+  var padding=EdgeInsets.all(0);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,18 +71,45 @@ class _LogInState extends State<LogIn> {
                   margin: EdgeInsets.all(10),
                   height: 50.0,
                   width: 150,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                        side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-                    onPressed: () {
-                       Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage()), (Route<dynamic> route) => false);
+                  child: Listener(
+                    onPointerDown: (item){
+                      setState(() {
+                         padding=EdgeInsets.fromLTRB(2,15,2,4);
+                       
+                      });
                     },
-                    padding: EdgeInsets.all(10.0),
-                    color: Color.fromRGBO(0, 160, 227, 1),
-                    textColor: Colors.white,
-                    child: Text("Login",
-                        style: TextStyle(fontSize: 15)),
+
+                    onPointerUp: (item){
+                      setState(() {
+                         padding=EdgeInsets.all(0);
+                         
+                      });
+                      Duration(milliseconds:100);
+                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage()), (Route<dynamic> route) => false);
+                    },
+
+                    
+                                      child: AnimatedPadding(
+                      padding: padding,
+                      curve: Curves.decelerate,
+                      duration: Duration(milliseconds:700),
+                                        child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                       // onPressed: () {
+                      //     Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage()), (Route<dynamic> route) => false);
+                      //  },
+                      onPressed: (){
+                       //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage()), (Route<dynamic> route) => false);
+                      },
+                        
+                        color: Color.fromRGBO(0, 160, 227, 1),
+                        textColor: Colors.white,
+                        child: Text("Login",
+                            style: TextStyle(fontSize: 15)),
+                      ),
+                    ),
                   ),
                 ),
               ],
