@@ -77,7 +77,7 @@ class _StudentsPlacedState extends State<StudentsPlaced> {
           ),
           centerTitle: true,
           elevation: 0,
-          title: Text("Students Placed"),
+          title: Text("Placement Stats"),
           
         ),
 

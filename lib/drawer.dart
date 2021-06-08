@@ -46,7 +46,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.person),
-            title: Text("Students Placed"),
+            title: Text("Placement stats"),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(context,MaterialPageRoute(builder: (context )=>StudentsPlaced()));

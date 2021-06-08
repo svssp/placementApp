@@ -114,7 +114,7 @@ class _NotificationsState extends State<Notifications> {
 
                         SizedBox(height:15),
 
-                        Text("Estimated Package : 3.6LPA, 4.8LPA",style:GoogleFonts.quicksand(textStyle:TextStyle(
+                        Text("Estimated Package : 3.6LPA-4.8LPA",style:GoogleFonts.quicksand(textStyle:TextStyle(
                           fontWeight:FontWeight.w500,
                           fontSize: 17.0,
                           
