@@ -1,6 +1,6 @@
-# sample
+# Placement Port
 
-A new Flutter project.
+A new Flutter project to design Placement Portal App.
 
 ## Getting Started
 
