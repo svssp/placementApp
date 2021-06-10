@@ -1,4 +1,6 @@
 # This is a generated file; do not edit or check into version control.
+firebase_core=/home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.7.0/
+firebase_core_web=/home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+3/
 path_provider=/home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.28/
 path_provider_linux=/home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-0.0.1+2/
 path_provider_macos=/home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-0.0.4+8/
