@@ -10,13 +10,23 @@ class company
   company(this.name,this.nop,this.pkg,this.imgpath);
 }
 
-List<company>c=[
+  List<company>c=[
   company("Infosys", 38,"3.6LPA,4.8LPA,5LPA",'images/infosys.png'),
   company("Wipro", 47,"3.6LPA,4LPA",'images/wipro.png'),
   company("Accenture",11,"4.5LPA, 6.0LPA","images/accenture.png"),
   company("Cognizant", 39,"4.5LPA,6LPA",'images/cognizant.png'),
   company("Fanatics", 2,"12LPA",'images/fanatics.jpeg')
 ];
+
+
+class CompaniesVisited extends StatefulWidget {
+
+  @override
+  _CompaniesVisitedState createState() => _CompaniesVisitedState();
+}
+
+class _CompaniesVisitedState extends State<CompaniesVisited> {
+
 
 
 
@@ -35,16 +45,6 @@ List<BarChartGroupData>_bargroupdata=c.map((item)=>BarChartGroupData(
                           ],
                         ),).toList();
 
-
-
-class CompaniesVisited extends StatefulWidget {
-
-  @override
-  _CompaniesVisitedState createState() => _CompaniesVisitedState();
-}
-
-class _CompaniesVisitedState extends State<CompaniesVisited> {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,11 +63,15 @@ class _CompaniesVisitedState extends State<CompaniesVisited> {
           ),
           title: new Text("Companies",style:Theme.of(context).textTheme.headline5.copyWith(fontWeight:FontWeight.bold),
           ),
+          
           actions: [
-            PopupMenuButton(itemBuilder: (BuildContext context)
-            {
-              return [PopupMenuItem(child: Text("Sort By",style: TextStyle(fontWeight:FontWeight.w900),)),PopupMenuItem<String>(value: "Package",child: Text("Package Offered"),),PopupMenuItem<String>(value: "",child: Text("Total Recruitments"),)];
-            })
+            PopupMenuButton(
+              initialValue:"rec",
+              itemBuilder: (BuildContext context)
+              {
+              
+                return [PopupMenuItem<String>(value: "pkg",child: Text("Package Offered"),),PopupMenuItem<String>(value: "rec",child: Text("Total Recruitments"),)];
+              })
           ],
           centerTitle: true,
           elevation: 0,

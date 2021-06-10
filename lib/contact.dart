@@ -8,7 +8,70 @@ List<String>PlacementCell=[
   "SVSSP"
 ];
 
-class Contact extends StatelessWidget {
+class ContactCard extends StatelessWidget {
+  String icon;
+  String name;
+  String sub;
+  String phone;
+  ContactCard(this.icon,this.name,this.sub,this.phone);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xFFF5F7FB),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14,10,12,10),
+        child: Row(
+          
+          children: [
+            Expanded(
+              flex: 1,
+                          child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(image: AssetImage("assets/images/download.jpeg")),
+                  ),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal:4),
+                            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Text(name,
+                style: TextStyle(
+                  fontWeight:FontWeight.w600,
+                  fontSize:20,
+                ),),
+
+                Text(sub,
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.grey,
+                ),),
+              ],),
+                          ),
+            ),
+            Expanded(
+              flex:1,
+              child: Icon(Icons.call)),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Contact extends StatefulWidget {
+  @override
+  _ContactState createState() => _ContactState();
+}
+
+class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,10 +100,9 @@ class Contact extends StatelessWidget {
           elevation: 0,
         ),
 
-
-        body: new Padding(
-          padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-
+/*
+        body: Container(
+          color: Color(0xFFF5F7FB),
           child: SingleChildScrollView(
                       child: Column(
               children:PlacementCell.map(
@@ -54,8 +116,8 @@ class Contact extends StatelessWidget {
                         BoxShadow(
                         color: Colors.black38,
                         offset: const Offset(
-                          3.0,
-                          3.0,
+                          1.0,
+                          1.0,
                         ),
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
@@ -91,7 +153,22 @@ class Contact extends StatelessWidget {
               ),
           ),
         ),
+*/
 
+      body: SingleChildScrollView(
+        child:Container(
+          color: Color(0xFFF5F7FB),
+          child: Column(
+            children:PlacementCell.map((e) =>
+            Column(
+              children: [
+                ContactCard("hello", e, "PlacementCell", "996"),
+                Divider(color:Colors.grey),
+              ],
+            ), 
+            ).toList(),
+          ),
+        ) ,),
       ),
     );
 

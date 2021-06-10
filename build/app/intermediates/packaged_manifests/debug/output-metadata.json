@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.sample",
+  "applicationId": "com.example.placementport",
   "variantName": "debug",
   "elements": [
     {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:sample/drawer.dart';
+import 'package:placementport/drawer.dart';
 
 final List<String> imagesList = [
   'assets/images/placement1.png',

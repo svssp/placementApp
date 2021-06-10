@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sample/CompaniesVisited.dart';
-import 'package:sample/contact.dart';
-import 'package:sample/notifications.dart';
-import 'package:sample/signup.dart';
-import 'package:sample/studentsplaced.dart';
+import 'package:placementport/CompaniesVisited.dart';
+import 'package:placementport/contact.dart';
+import 'package:placementport/notifications.dart';
+import 'package:placementport/signup.dart';
+import 'package:placementport/studentsplaced.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
