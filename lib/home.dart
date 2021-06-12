@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:placementport/drawer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 final List<String> imagesList = [
   'assets/images/placement1.png',
@@ -8,30 +9,31 @@ final List<String> imagesList = [
   'assets/images/placement3.jpeg'
 ];
 
+FirebaseFirestore _firestore=FirebaseFirestore.instance;
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
   int _currentIndex=0;
+  bool _isadmin=false;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme:ThemeData(
         
     primaryColor: Colors.white,
-
-    // Define the default font family.
     fontFamily: 'inter',
 
-    // Define the default TextTheme. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
     textTheme: TextTheme(
       headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
       headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
       bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'inter'),
       )),
+
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white70,
@@ -103,7 +105,7 @@ class _HomePageState extends State<HomePage> {
           ],
           
         ),
-        drawer: MyDrawer(),
+        drawer: MyDrawer(_isadmin),
       ),
     );
   }

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/firebase_auth/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/firebase_auth/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/firebase_auth/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/firebase_auth/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/layout-v21/notification_template_custom_big.xml"
+    }
+]

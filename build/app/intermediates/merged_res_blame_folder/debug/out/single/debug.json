@@ -8,12 +8,12 @@
         "source": "/home/svssp/jarvis/flutter/Placement Port/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/svssp/jarvis/flutter/Placement Port/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/home/svssp/jarvis/flutter/Placement Port/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/svssp/jarvis/flutter/Placement Port/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "/home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",

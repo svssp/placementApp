@@ -4,8 +4,13 @@ import 'package:placementport/contact.dart';
 import 'package:placementport/notifications.dart';
 import 'package:placementport/signup.dart';
 import 'package:placementport/studentsplaced.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+FirebaseAuth _auth=FirebaseAuth.instance;
 
 class MyDrawer extends StatelessWidget {
+  bool _isadmin;
+  MyDrawer(this._isadmin);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -28,6 +33,34 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+
+          _isadmin?ListTile(
+            leading: Icon(Icons.notifications),
+            title: Text("upload Company"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>Notifications()));
+            },
+          ):Container(height:0,width:0),
+
+           _isadmin?ListTile(
+            leading: Icon(Icons.notifications),
+            title: Text("Send Notification"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>Notifications()));
+            },
+          ):Container(height:0,width:0),
+
+           _isadmin?ListTile(
+            leading: Icon(Icons.notifications),
+            title: Text("Upload New Students"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,MaterialPageRoute(builder: (context )=>Notifications()));
+            },
+          ):Container(height:0,width:0),
+
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text("Notifications"),
@@ -64,7 +97,8 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.logout),
             title: Text("LogOut"),
-            onTap: () {
+            onTap: () async {
+              await FirebaseAuth.instance.signOut();
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>LogIn()), (Route<dynamic> route) => false);
             },
           )

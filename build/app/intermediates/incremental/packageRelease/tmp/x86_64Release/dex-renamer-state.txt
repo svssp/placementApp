@@ -1,4 +1,4 @@
-#Tue Jun 08 00:39:53 IST 2021
-base.0=/home/svssp/jarvis/flutter/sample/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+#Fri Jun 11 23:48:06 IST 2021
+base.0=/home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

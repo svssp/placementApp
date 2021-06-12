@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/svssp/jarvis/flutter/sample/build/path_provider/intermediates/incremental/mergeReleaseResources/merged.dir/values-kk/values-kk.xml",
+            "outputFile": "/home/svssp/jarvis/flutter/Placement Port/build/path_provider/intermediates/incremental/mergeReleaseResources/merged.dir/values-kk/values-kk.xml",
             "map": [
                 {
-                    "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-kk/values-kk.xml",
+                    "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/values-kk/values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/home/svssp/jarvis/flutter/sample/build/path_provider/intermediates/res/merged/release/values-kk/values-kk.xml",
+            "outputFile": "/home/svssp/jarvis/flutter/Placement Port/build/path_provider/intermediates/res/merged/release/values-kk/values-kk.xml",
             "map": [
                 {
-                    "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/res/values-kk/values-kk.xml",
+                    "source": "/home/svssp/.gradle/caches/transforms-2/files-2.1/f858def9f026e4920eaea989b32f0732/core-1.1.0/res/values-kk/values-kk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
