@@ -57,7 +57,7 @@ class ContactCard extends StatelessWidget {
             ),
             Expanded(
               flex:1,
-              child: Icon(Icons.call)),
+              child: Icon(Icons.email_outlined),)
 
           ],
         ),

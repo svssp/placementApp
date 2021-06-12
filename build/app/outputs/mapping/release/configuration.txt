@@ -123,6 +123,7 @@
 # End of content from /home/svssp/snap/flutter/common/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro
 # The proguard configuration file for the following section is /home/svssp/jarvis/flutter/Placement Port/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class androidx.multidex.MultiDexApplication { <init>(); }
 -keep class com.example.sample.MainActivity { <init>(); }
 -keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
 -keep class com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService { <init>(); }
@@ -157,6 +158,27 @@
 }
 
 # End of content from /home/svssp/.gradle/caches/transforms-2/files-2.1/02dad02b0f2dc7e26ada00031172e626/jetified-firebase-auth-20.0.1/proguard.txt
+# The proguard configuration file for the following section is /home/svssp/.gradle/caches/transforms-2/files-2.1/97f4c2dc60ca421a81fcd1e22123a009/jetified-firebase-firestore-22.0.1/proguard.txt
+# Needed for DNS resolution.  Present in OpenJDK, but not Android
+-dontwarn javax.naming.**
+
+# Don't warn about checkerframework
+#
+# Guava uses the checkerframework and the annotations
+# can safely be ignored at runtime.
+-dontwarn org.checkerframework.**
+
+# Guava warnings:
+-dontwarn java.lang.ClassValue
+-dontwarn com.google.j2objc.annotations.Weak
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn javax.lang.model.element.Modifier
+
+# Okhttp warnings.
+-dontwarn okio.**
+-dontwarn com.google.j2objc.annotations.**
+
+# End of content from /home/svssp/.gradle/caches/transforms-2/files-2.1/97f4c2dc60ca421a81fcd1e22123a009/jetified-firebase-firestore-22.0.1/proguard.txt
 # The proguard configuration file for the following section is /home/svssp/.gradle/caches/transforms-2/files-2.1/90a5b4cb2fd9ac819652dcd9e531b5b9/jetified-play-services-base-17.1.0/proguard.txt
 # b/35135904 Ensure that proguard will not strip the mResultGuardian.
 -keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {
@@ -327,6 +349,45 @@
 }
 
 # End of content from /home/svssp/.gradle/caches/transforms-2/files-2.1/9c2047ace7eae5fd9bc0c3e0ac0256b5/rules/lib/META-INF/proguard/androidx-annotations.pro
+# The proguard configuration file for the following section is /home/svssp/.gradle/caches/transforms-2/files-2.1/1c5aaf1a342a82fe816777bb66d09ad9/jetified-grpc-android-1.28.0/proguard.txt
+-keepclassmembers class io.grpc.okhttp.OkHttpChannelBuilder {
+  io.grpc.okhttp.OkHttpChannelBuilder forTarget(java.lang.String);
+  io.grpc.okhttp.OkHttpChannelBuilder scheduledExecutorService(java.util.concurrent.ScheduledExecutorService);
+  io.grpc.okhttp.OkHttpChannelBuilder sslSocketFactory(javax.net.ssl.SSLSocketFactory);
+  io.grpc.okhttp.OkHttpChannelBuilder transportExecutor(java.util.concurrent.Executor);
+}
+
+# End of content from /home/svssp/.gradle/caches/transforms-2/files-2.1/1c5aaf1a342a82fe816777bb66d09ad9/jetified-grpc-android-1.28.0/proguard.txt
+# The proguard configuration file for the following section is /home/svssp/.gradle/caches/transforms-2/files-2.1/ea4bdea245781c005e943941cb49265b/jetified-protolite-well-known-types-17.1.1/proguard.txt
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+
+# protobuf-javalite has a bug that requires this workaround rule
+# https://github.com/protocolbuffers/protobuf/issues/6463#issuecomment-553183215
+-keepclassmembers class * extends com.google.protobuf.GeneratedMessageLite {
+  <fields>;
+}
+
+# End of content from /home/svssp/.gradle/caches/transforms-2/files-2.1/ea4bdea245781c005e943941cb49265b/jetified-protolite-well-known-types-17.1.1/proguard.txt
 # The proguard configuration file for the following section is <unknown>
 -ignorewarnings
 # End of content from <unknown>

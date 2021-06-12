@@ -85,7 +85,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(context,MaterialPageRoute(builder: (context )=>StudentsPlaced()));
             },
           ),
-          ListTile(
+          !_isadmin?ListTile(
             leading: Icon(Icons.phone_android),
             title: Text("Contact Us"),
             onTap: () {
@@ -93,7 +93,7 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(context,MaterialPageRoute(builder: (context )=>Contact()));
             
             },
-          ),
+          ):Container(height:0,width:0),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text("LogOut"),

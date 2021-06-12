@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: (auth.currentUser==null)?LogIn():HomePage(),
+      home: (auth.currentUser==null)?LogIn():HomePage(auth.currentUser.email),
     );
   }
 }
@@ -23,12 +23,13 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogInState extends State<LogIn> {
-  var _displayusererror=false;
-  bool _loading=false;
-      final _formKey = GlobalKey<FormState>();
+    var _displayusererror=false;
+    bool _loading=false;
+    final _formKey = GlobalKey<FormState>();
     var padding=EdgeInsets.all(0);
     final emailcontroller=TextEditingController();
     final passcontroller=TextEditingController();
+    
   @override
   Widget build(BuildContext context){
 
@@ -119,7 +120,7 @@ class _LogInState extends State<LogIn> {
                             password: passcontroller.text,
                         ).then((value) {
                           
-                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage()), (Route<dynamic> route) => false);
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>HomePage(emailcontroller.text)), (Route<dynamic> route) => false);
                         });
                         } on FirebaseAuthException catch (e) {
                         setState(() {
