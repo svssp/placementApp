@@ -8,6 +8,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "auto_size_text",
+      "rootUri": "file:///home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///home/svssp/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -356,7 +362,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-06-13T09:36:12.977697Z",
+  "generated": "2021-06-13T18:49:13.335681Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }

@@ -148,15 +148,15 @@ class _NotificationsState extends State<Notifications> {
                           children: [
                             Row(
                               children: [
-                                Text(company.ongoing?"Ongoing":"Expired"),
+                                Text(company.ongoing?"ONGOING":"EXPIRED",style: TextStyle(fontWeight: FontWeight.bold),),
                                 SizedBox(width:6),
                                 Container(
                               decoration:BoxDecoration(
                                 shape:BoxShape.circle,
                                 color:company.ongoing?Colors.greenAccent[400]:Colors.redAccent[200],
                               ),
-                              height: 18,
-                              width: 18,
+                              height: 13,
+                              width: 13,
                               
                             ),
                               ],
