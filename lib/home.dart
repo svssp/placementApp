@@ -63,6 +63,9 @@ class _IntroBuilderState extends State<IntroBuilder> {
   CollectionReference _user=_firestore.collection("users");
   var _currentIndex;
   bool _isadmin=false;
+  String name;
+  String roll;
+  String branch;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +79,12 @@ class _IntroBuilderState extends State<IntroBuilder> {
           if (snapshot.hasData) {
           var data = snapshot.data.data();
           _isadmin=data['isAdmin'];
+          if(!_isadmin)
+          {
+            name=data['name'];
+            roll=data['rollnum'];
+            branch=data['branch'];
+          }
           return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white70,
@@ -147,7 +156,7 @@ class _IntroBuilderState extends State<IntroBuilder> {
             ],
             
           ),
-          drawer: MyDrawer(_isadmin), 
+          drawer: _isadmin?MyDrawer(_isadmin):MyDrawer(_isadmin,roll=roll,name=name) 
       );
         }
           return Scaffold(

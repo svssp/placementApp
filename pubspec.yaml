@@ -76,6 +76,9 @@ flutter:
     - family: padauk
       fonts:
         - asset: assets/fonts/Padauk-Regular.ttf
+    - family: opensans
+      fonts:
+        - asset: assets/fonts/Open_Sans/OpenSans-Regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
