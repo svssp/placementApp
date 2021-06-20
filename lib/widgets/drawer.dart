@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:placementport/drawer_screens/CompaniesVisited.dart';
 import 'package:placementport/drawer_screens/contact.dart';
 import 'package:placementport/drawer_screens/notifications.dart';
-import 'package:placementport/signup.dart';
+import 'package:placementport/signin.dart';
 import 'package:placementport/drawer_screens/studentsplaced.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -73,6 +73,15 @@ class MyDrawer extends StatelessWidget {
               ],
               ),
               Divider(height: 10,color: Colors.grey,),
+
+               ListTile(
+                leading: Icon(FlutterIcons.notifications_active_mdi),
+                horizontalTitleGap: 0,
+                title: Text("Home",style: TextStyle(fontFamily:'opensans')),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
 
               _isadmin?ListTile(
                 leading: Icon(FlutterIcons.upload_faw5s),

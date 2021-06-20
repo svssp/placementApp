@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:placementport/drawer_screens/notification_company.dart';
+import 'package:placementport/widgets/fade_animation.dart';
+
 
 class Companies
 {
@@ -54,7 +57,7 @@ class _NotificationsState extends State<Notifications> {
 
         appBar: new AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(Icons.arrow_back_ios),
             onPressed: ()=>Navigator.of(context).pop(),
           ),
           title: new Text("Notifications",style:Theme.of(context).textTheme.headline5.copyWith(fontWeight:FontWeight.bold),
@@ -70,116 +73,123 @@ class _NotificationsState extends State<Notifications> {
             child:Column(
 
               children: s.map(
-                (company) => Container(
-                 margin: EdgeInsets.symmetric(horizontal:20,vertical: 8),
-                  decoration: BoxDecoration(
-                        borderRadius:BorderRadius.all(Radius.circular(8)),
-                        color: Colors.white,
-                      ),
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(25.0,10.0,10.0,5.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                (company) => FadeAnimation(
+                  delay:0.9,
+                  xDistance:30,
+                  yDistance:30,
+                                  child: Container(
+                   margin: EdgeInsets.symmetric(horizontal:20,vertical: 8),
+                    decoration: BoxDecoration(
+                          borderRadius:BorderRadius.all(Radius.circular(8)),
+                          color: Colors.white,
+                        ),
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(25.0,10.0,10.0,5.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
 
 
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            constraints: BoxConstraints(
-                              minWidth: 200,
-                            ),
-                            
-                            width: (20*company.name.length).toDouble(),
-                            height: 40,
-                            decoration: BoxDecoration(
-                              
-                              color:Colors.blue[600],
-                              borderRadius: BorderRadius.only(bottomLeft:Radius.circular(120),bottomRight:Radius.circular(120))
-                            ),
-                            child: Align(
-                              alignment: Alignment.center,
-                                                          child: Text(company.name.toUpperCase(),
-                              style: GoogleFonts.quicksand(textStyle:TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20.0,
-                                color: Colors.white,
-                             
-                              ),)
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              constraints: BoxConstraints(
+                                minWidth: 200,
                               ),
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(height:15),
-
-                        Text("Estimated Package : 3.6LPA-4.8LPA",style:GoogleFonts.quicksand(textStyle:TextStyle(
-                          fontWeight:FontWeight.w500,
-                          fontSize: 17.0,
-                          
-                          ),
-                          ),
-                        ),
-
-                        SizedBox(height:8),
-
-                        Text.rich(TextSpan(children: [
-                          TextSpan(
-                            text:"Last Date To Apply: ",
-                            style: GoogleFonts.quicksand(
-                              textStyle: TextStyle(
-                                fontSize:15.0,
+                              
+                              width: (20*company.name.length).toDouble(),
+                              height: 40,
+                              decoration: BoxDecoration(
                                 
-                              )
-                            ),
-                          )
-                          ,
-                          TextSpan(
-                            text:company.date,
-                            style:TextStyle(color: Colors.red[700],fontSize:15.0,fontWeight: FontWeight.bold,),
-                          )
-                        ])),
-
-                        Divider(height:30,color: Colors.white54),
-
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Text(company.ongoing?"ONGOING":"EXPIRED",style: TextStyle(fontWeight: FontWeight.bold),),
-                                SizedBox(width:6),
-                                Container(
-                              decoration:BoxDecoration(
-                                shape:BoxShape.circle,
-                                color:company.ongoing?Colors.greenAccent[400]:Colors.redAccent[200],
+                                color:Colors.blue[600],
+                                borderRadius: BorderRadius.only(bottomLeft:Radius.circular(120),bottomRight:Radius.circular(120))
                               ),
-                              height: 13,
-                              width: 13,
-                              
-                            ),
-                              ],
-                            ),
-                            TextButton(
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                              minimumSize: Size(20, 10),
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                              
+                              child: Align(
+                                alignment: Alignment.center,
+                                                            child: Text(company.name.toUpperCase(),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 20.0,
+                                  color: Colors.white,
+                                fontFamily: 'quicksand'
+                                ),
+                                ),
                               ),
-                            child: Text("More Details >>",textAlign: TextAlign.right,),
-                            autofocus: false,
-                            onPressed: (){},
                             ),
-                          ],
-                        ),
-                        SizedBox(
-                          height:10,
-                        ),
-                      ],),
+                          ),
+
+                          SizedBox(height:15),
+
+                          Text("Estimated Package : 3.6LPA-4.8LPA",style:TextStyle(
+                            fontWeight:FontWeight.w500,
+                            fontSize: 17.0,
+                            fontFamily: 'quicksand'
+                            
+                            ),
+                          ),
+
+                          SizedBox(height:8),
+
+                          Text.rich(TextSpan(children: [
+                            TextSpan(
+                              text:"Last Date To Apply: ",
+                              style:  TextStyle(
+                                  fontSize:15.0,
+                                  fontFamily: 'quicksand'
+                              ),
+                            )
+                            ,
+                            TextSpan(
+                              text:company.date,
+                              style:TextStyle(
+                                color: Colors.red[700],
+                                fontSize:15.0,fontWeight: FontWeight.bold,),
+                            )
+                          ])),
+
+                          Divider(height:30,color: Colors.white54),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(company.ongoing?"ONGOING":"EXPIRED",style: TextStyle(fontWeight: FontWeight.bold),),
+                                  SizedBox(width:6),
+                                  Container(
+                                decoration:BoxDecoration(
+                                  shape:BoxShape.circle,
+                                  color:company.ongoing?Colors.greenAccent[400]:Colors.redAccent[200],
+                                ),
+                                height: 13,
+                                width: 13,
+                                
+                              ),
+                                ],
+                              ),
+                              TextButton(
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                minimumSize: Size(20, 10),
+                                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                
+                                ),
+                              child: Text("More Details >>",textAlign: TextAlign.right,),
+                              autofocus: false,
+                              onPressed: (){
+                                 Navigator.push(context,MaterialPageRoute(builder: (context )=>Company(company.name,company.eligibility,company.date)));
+                              },
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height:10,
+                          ),
+                        ],),
+                    ),
+                  
                   ),
-                
                 )).toList(),
             ),
           ),

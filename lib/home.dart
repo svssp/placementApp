@@ -190,9 +190,7 @@ backgroundColor:Color(0xFFF5F7FB),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child:Text("Profile",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20,fontFamily: 'opensans')),),
+                      Text("Profile",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20,fontFamily: 'opensans')),
                         SizedBox(height:8),
                        AutoSizeText(
                               
@@ -214,9 +212,7 @@ backgroundColor:Color(0xFFF5F7FB),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child:Text("Vision",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20,fontFamily: 'opensans')),),
+                      Text("Vision",style: TextStyle(fontWeight:FontWeight.bold,fontSize: 20,fontFamily: 'opensans')),
                         SizedBox(height:8),
                        AutoSizeText(
                               
