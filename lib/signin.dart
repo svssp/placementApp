@@ -67,11 +67,16 @@ class _LogInState extends State<LogIn> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Center(
-                              child: Container(
-                                  width: 200,
-                                  height: 150,
-                                  child:
-                                      Image.asset('assets/images/svuce.jpg')),
+                              child: Hero(
+                                tag: "Logo",
+                                child: Container(
+                                    width: 200,
+                                    height: 150,
+                                    child: Builder(builder: (context) {
+                                      return Image.asset(
+                                          'assets/images/svuce.jpg');
+                                    })),
+                              ),
                             ),
                             SizedBox(
                               height: 40,
