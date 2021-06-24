@@ -1,4 +1,6 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:placementport/drawer_screens/CompaniesVisited.dart';
 
 class Company extends StatefulWidget {
   String name;
@@ -83,6 +85,12 @@ class _CompanyState extends State<Company> {
                         fontFamily: 'opensans',
                         fontSize: 20,
                       ),
+                    ),
+                    Container(
+                      child: Divider(
+                        color: Colors.grey,
+                      ),
+                      width: 140,
                     ),
                     SizedBox(
                       height: 10,

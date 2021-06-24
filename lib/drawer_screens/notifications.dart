@@ -85,9 +85,9 @@ class _NotificationsState extends State<Notifications> {
             child: Column(
               children: s
                   .map((company) => FadeAnimation(
-                        delay: 0.9,
-                        xDistance: 30,
-                        yDistance: 30,
+                        delay: 0.9 + 0.2 * s.indexOf(company),
+                        xDistance: 0,
+                        yDistance: 40,
                         child: Container(
                           margin:
                               EdgeInsets.symmetric(horizontal: 20, vertical: 8),
