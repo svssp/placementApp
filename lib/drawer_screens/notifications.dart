@@ -25,24 +25,41 @@ List<Companies> s = [
   Companies(
       "Infosys",
       [
-        "Candidate Should be Human",
-        "Canditate should eat both veg and non-veg"
+        "As part of the Infosys delivery team, your primary role would be to ensure effective Design, Development, Validation and Support activities, to assure that our clients are satisfied with the high levels of service in the technology domain.",
+        "You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements.",
+        "You will play a key role in the overall estimation of work requirements to provide the right information on project estimations to Technology Leads and Project Managers.",
+        "You would be a key contributor to building efficient programs/ systems and if you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you!If you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place..."
       ],
       "30-12-2021",
       true),
   Companies(
       "Wipro",
-      ["Candidate Should be Alien", "Canditate must donate an UFO to company"],
+      [
+        "As part of the Infosys delivery team, your primary role would be to ensure effective Design, Development, Validation and Support activities, to assure that our clients are satisfied with the high levels of service in the technology domain.",
+        "You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements.",
+        "You will play a key role in the overall estimation of work requirements to provide the right information on project estimations to Technology Leads and Project Managers.",
+        "You would be a key contributor to building efficient programs/ systems and if you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you!If you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place..."
+      ],
       "30-12-2022",
       true),
   Companies(
       "Cognizant",
-      ["Candidate Should be from China", "Canditate should eat Aliens also"],
+      [
+        "As part of the Infosys delivery team, your primary role would be to ensure effective Design, Development, Validation and Support activities, to assure that our clients are satisfied with the high levels of service in the technology domain.",
+        "You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements.",
+        "You will play a key role in the overall estimation of work requirements to provide the right information on project estimations to Technology Leads and Project Managers.",
+        "You would be a key contributor to building efficient programs/ systems and if you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you!If you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place..."
+      ],
       "31-12-2023",
       true),
   Companies(
       "Yahoo",
-      ["Candidate Should be yoho", "Canditate must wear goggles"],
+      [
+        "As part of the Infosys delivery team, your primary role would be to ensure effective Design, Development, Validation and Support activities, to assure that our clients are satisfied with the high levels of service in the technology domain.",
+        "You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements.",
+        "You will play a key role in the overall estimation of work requirements to provide the right information on project estimations to Technology Leads and Project Managers.",
+        "You would be a key contributor to building efficient programs/ systems and if you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place for you!If you think you fit right in to help our clients navigate their next in their digital transformation journey, this is the place..."
+      ],
       "10-22-2021",
       false),
 ];

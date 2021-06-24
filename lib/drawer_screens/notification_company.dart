@@ -98,14 +98,27 @@ class _CompanyState extends State<Company> {
                   ] +
                   ec
                       .map((e) => Container(
-                            margin: EdgeInsets.symmetric(horizontal: 15),
-                            child:
-                                Text((ec.indexOf(e) + 1).toString() + "." + e,
-                                    style: TextStyle(
-                                      fontFamily: 'opensans',
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 15,
-                                    )),
+                            margin: EdgeInsets.symmetric(horizontal: 15)
+                                .copyWith(bottom: 15),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text((ec.indexOf(e) + 1).toString() + ") "),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: Text(e,
+                                      style: TextStyle(
+                                        fontFamily: 'opensans',
+                                        fontWeight: FontWeight.w300,
+                                        height: 1.4,
+                                        fontSize: 15,
+                                      )),
+                                ),
+                              ],
+                            ),
                           ))
                       .toList() +
                   [
