@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:placementport/admin/notifyStudent.dart';
+import 'package:placementport/admin/uploadStudentDetails.dart';
 import 'package:placementport/drawer_screens/CompaniesVisited.dart';
+import 'package:placementport/drawer_screens/aboutapp.dart';
 import 'package:placementport/drawer_screens/contact.dart';
 import 'package:placementport/drawer_screens/notifications.dart';
 import 'package:placementport/signin.dart';
@@ -60,7 +63,7 @@ class MyDrawer extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      roll + " (" + branch + ")",
+                                      name,
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontFamily: 'opensans',
@@ -69,7 +72,11 @@ class MyDrawer extends StatelessWidget {
                                     SizedBox(
                                       height: 4,
                                     ),
-                                    Text(name,
+                                    Text(
+                                        (roll ?? "") +
+                                            " (" +
+                                            (branch ?? "") +
+                                            ")",
                                         style:
                                             TextStyle(fontFamily: 'opensans')),
                                   ],
@@ -85,7 +92,7 @@ class MyDrawer extends StatelessWidget {
                 height: 10,
                 color: Colors.grey,
               ),
-              _isadmin
+              /* _isadmin
                   ? ListTile(
                       leading: Icon(FlutterIcons.upload_faw5s),
                       horizontalTitleGap: 0,
@@ -99,7 +106,7 @@ class MyDrawer extends StatelessWidget {
                                 builder: (context) => Notifications()));
                       },
                     )
-                  : Container(height: 0, width: 0),
+                  : Container(height: 0, width: 0),*/
               _isadmin
                   ? ListTile(
                       leading: Icon(FlutterIcons.send_mco),
@@ -108,10 +115,8 @@ class MyDrawer extends StatelessWidget {
                           style: TextStyle(fontFamily: 'opensans')),
                       onTap: () {
                         Navigator.pop(context);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Notifications()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Notify()));
                       },
                     )
                   : Container(height: 0, width: 0),
@@ -126,7 +131,7 @@ class MyDrawer extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Notifications()));
+                                builder: (context) => NewStudent()));
                       },
                     )
                   : Container(height: 0, width: 0),
@@ -190,7 +195,11 @@ class MyDrawer extends StatelessWidget {
                 horizontalTitleGap: 0,
                 title:
                     Text("About App", style: TextStyle(fontFamily: 'opensans')),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutAppView()));
+                },
               ),
               ListTile(
                 leading: Icon(FlutterIcons.logout_mco),

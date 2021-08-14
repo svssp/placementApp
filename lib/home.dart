@@ -65,17 +65,27 @@ class _IntroBuilderState extends State<IntroBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<DocumentSnapshot>(
-        future: _user.doc(email).get(),
+    return StreamBuilder(
+        stream: _user.doc(email).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError)
-            return Text("Error while Loading, Check Your Data Connection....");
+            return Scaffold(
+                body: Center(
+              child: Text(
+                "Error while Loading, Check Your Data Connection....",
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
+              ),
+            ));
           if (snapshot.hasData) {
             var data = snapshot.data.data();
             _isadmin = data['isAdmin'];
             if (!_isadmin) {
+              print(data);
               name = data['name'];
-              roll = data['rollnum'];
+              roll = data['rollnumber'];
               branch = data['branch'];
             }
             return Scaffold(
@@ -167,14 +177,14 @@ class _IntroBuilderState extends State<IntroBuilder> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          QuiickLinks(Icons.business_center_sharp, "companies",
+                          QuickLinks(Icons.business_center_sharp, "companies",
                               () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => CompaniesVisited()));
                           }),
-                          QuiickLinks(
+                          QuickLinks(
                               Icons.notifications_active_sharp, "notifications",
                               () {
                             Navigator.push(
@@ -182,7 +192,7 @@ class _IntroBuilderState extends State<IntroBuilder> {
                                 MaterialPageRoute(
                                     builder: (context) => Notifications()));
                           }),
-                          QuiickLinks(Icons.contact_mail_sharp, "contact", () {
+                          QuickLinks(Icons.contact_mail_sharp, "contact", () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

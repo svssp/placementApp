@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:placementport/widgets/fade_animation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-List<String> PlacementCell = [
-  "Dr.Vivekanandha Reddy",
-  "P.Rakesh",
-  "V.Madhuri",
-  "K.Surya",
-  "SVSSP"
-];
+Map<String, dynamic> PlacementCell = {
+  "Dr.Vivekanandha Reddy": {
+    "Position": "Placement Co ordinator",
+    "Phone": "+919441005225"
+  },
+  "Sri Murali": {
+    "Position": "Placement Co ordinator ",
+    "Phone": "+919441005225"
+  },
+  "Siva": {"Position": "Placement Incharge", "Phone": "+919441005225"},
+};
 
 class ContactCard extends StatelessWidget {
   String icon;
@@ -100,62 +105,6 @@ class _ContactState extends State<Contact> {
               style: TextStyle(fontWeight: FontWeight.bold)),
           elevation: 0,
         ),
-
-/*
-        body: Container(
-          color: Color(0xFFF5F7FB),
-          child: SingleChildScrollView(
-                      child: Column(
-              children:PlacementCell.map(
-                (item)=>Container(
-                  width: double.infinity,
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 0,vertical: 8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      boxShadow: [
-                        BoxShadow(
-                        color: Colors.black38,
-                        offset: const Offset(
-                          1.0,
-                          1.0,
-                        ),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ),
-
-                      BoxShadow(
-                        color: Colors.white,
-                        offset: const Offset(0.0, 0.0),
-                        blurRadius: 0.0,
-                        spreadRadius: 0.0,
-                      ),
-                      ]
-                    ),
-                    
-                    child: Padding(
-                      padding: const EdgeInsets.all(14),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:[
-                          Text(item,
-                          style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-                          ),
-                          SizedBox(height:10),
-                          Text("Placement Cell"),
-                          Divider(height:20,color: Colors.black45,),
-                          TextButton(child: Text("call",),autofocus: false,onPressed: (){},style: TextButton.styleFrom(padding:EdgeInsets.zero,alignment:Alignment.centerLeft),),
-                        ]
-                      ),
-                    ),
-                  ),
-                )
-              ).toList(),
-              ),
-          ),
-        ),
-*/
-
         body: Container(
           height: double.infinity,
           color: Color(0xFFF5F7FB),
@@ -180,9 +129,10 @@ class _ContactState extends State<Contact> {
                         child: Column(
                           children: [
                             ListTile(
-                              subtitle: Text("Placement Co-Ordinator"),
+                              subtitle: Text(
+                                  "${PlacementCell.values.elementAt(index)["Position"]}"),
                               title: Text(
-                                "${PlacementCell[index]}",
+                                "${PlacementCell.keys.elementAt(index)}",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -220,9 +170,11 @@ class _ContactState extends State<Contact> {
                                 Row(
                                   children: [
                                     SocialContactIcon(
-                                      iconData:
-                                          FlutterIcons.linkedin_square_ant,
-                                      onTap: () {},
+                                      iconData: FlutterIcons.twitter_faw,
+                                      onTap: () {
+                                        launch(
+                                            "https://twitter.com/svuniversitytpt?lang=en");
+                                      },
                                       color: Colors.blue,
                                     ),
                                     SizedBox(
@@ -230,14 +182,19 @@ class _ContactState extends State<Contact> {
                                     ),
                                     SocialContactIcon(
                                       iconData: FlutterIcons.mail_fea,
-                                      onTap: () {},
+                                      onTap: () {
+                                        launch("mailto:prakashsvssp@gmail.com");
+                                      },
                                       color: Colors.red,
                                     ),
                                   ],
                                 ),
                                 SocialContactIcon(
                                   iconData: FlutterIcons.message1_ant,
-                                  onTap: () {},
+                                  onTap: () {
+                                    launch(
+                                        "sms:${PlacementCell.values.elementAt(index)["Phone"]}");
+                                  },
                                 )
                               ],
                             )

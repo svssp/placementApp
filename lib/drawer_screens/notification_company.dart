@@ -1,6 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:placementport/drawer_screens/CompaniesVisited.dart';
+import 'package:placementport/drawer_screens/applynow.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Company extends StatefulWidget {
   String name;
@@ -72,7 +74,12 @@ class _CompanyState extends State<Company> {
                             style: TextStyle(
                                 fontWeight: FontWeight.w500, fontSize: 16)),
                         autofocus: false,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegforComp(name)));
+                        },
                       ),
                     ),
                     SizedBox(

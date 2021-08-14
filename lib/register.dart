@@ -212,7 +212,7 @@ class _RegisterState extends State<Register> {
                                                   _loading = false;
                                                   _displayusererror = true;
                                                   errmsg =
-                                                      "Successfully Registered";
+                                                      "Successfully Registered! Please Login again";
                                                 });
                                               });
                                             } on FirebaseAuthException catch (e) {
@@ -282,7 +282,7 @@ class _RegisterState extends State<Register> {
                                         Navigator.pop(context);
                                       },
                                       child: Text.rich(TextSpan(
-                                          text: "Already Have an Account  ",
+                                          text: "Already Have an Account. ",
                                           style: TextStyle(
                                             fontWeight: FontWeight.w300,
                                             color: Colors.black,
@@ -293,8 +293,7 @@ class _RegisterState extends State<Register> {
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 16,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
+                                                color: Colors.blue[300],
                                               ),
                                             )
                                           ]))),

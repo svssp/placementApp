@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class QuiickLinks extends StatelessWidget {
-  IconData icon;
-  String link;
-  Function _onPress;
-  QuiickLinks(this.icon, this.link, this._onPress);
+class QuickLinks extends StatelessWidget {
+  final IconData icon;
+  final String link;
+  final Function _onPress;
+  QuickLinks(this.icon, this.link, this._onPress);
 
   @override
   Widget build(BuildContext context) {
